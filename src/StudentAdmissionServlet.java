@@ -41,7 +41,13 @@ public class StudentAdmissionServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		//doGet(request, response);
+		String firstName = request.getParameter("firstName");
+	    String lastName = request.getParameter("lastName");
+	    Float gradeHighschool = Float.valueOf(request.getParameter("gradeHighschool"));
+	    Float gradeExam = Float.valueOf(request.getParameter("gradeExam"));
+	    PrintWriter out = response.getWriter();
+	    out.println("<p>" + firstName + " " + lastName + " " + gradeHighschool + " " + gradeExam + "</p>");
 	}
 
 }
