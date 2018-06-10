@@ -1,0 +1,6 @@
+public enum AdmissionStatus {
+		ADMITTEDONSCHOLARSHIP, 
+		ADMITTEDONTAX,
+		ADMITTED, 
+		REJECTED 
+	};

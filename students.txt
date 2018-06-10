@@ -1,0 +1,2 @@
+{"lastName: ":"dfvf","status: ":"ADMITTED","gradeExam: ":6,"firstName: ":"sdvewf","gradeHighschool: ":6,"average: ":7}{"lastName: ":"drgf","status: ":"REJECTED","gradeExam: ":4,"firstName: ":"sdcs","gradeHighschool: ":4,"average: ":5}
+{"lastName: ":"drgf","status: ":"ADMITTEDONSCHOLARSHIP","gradeExam: ":10,"firstName: ":"sdcs","gradeHighschool: ":10,"average: ":10}
