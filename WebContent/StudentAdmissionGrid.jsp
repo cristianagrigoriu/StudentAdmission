@@ -82,7 +82,7 @@
 	    	    		var lastName = $("#lastName").val();
 	    	    		var gradeHighschool = $("#gradeHighschool").val();
 	    	    		var gradeExam = $("#gradeExam").val();
-		    	    	alert(firstName + " " + gradeExam);
+		    	    	//alert(firstName + " " + gradeExam);
 		    	    	$.post($form.attr("action"), $form.serialize(), function(response) {
 		    		        // ...
 		    		    });

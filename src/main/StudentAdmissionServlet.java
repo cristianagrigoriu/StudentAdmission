@@ -1,3 +1,4 @@
+package main;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -61,6 +62,8 @@ public class StudentAdmissionServlet extends HttpServlet {
 	private void writeStudentToFile(Student s) {
 		JSONObject student = new JSONObject();
  
+		assert s.getFirstName() != null;
+		
 		try {
 			student.put("firstName: ", s.getFirstName());
 			student.put("lastName: ", s.getLastName());

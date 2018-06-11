@@ -1,2 +1,8 @@
 {"lastName: ":"dfvf","status: ":"ADMITTED","gradeExam: ":6,"firstName: ":"sdvewf","gradeHighschool: ":6,"average: ":7}{"lastName: ":"drgf","status: ":"REJECTED","gradeExam: ":4,"firstName: ":"sdcs","gradeHighschool: ":4,"average: ":5}
 {"lastName: ":"drgf","status: ":"ADMITTEDONSCHOLARSHIP","gradeExam: ":10,"firstName: ":"sdcs","gradeHighschool: ":10,"average: ":10}
+{"lastName: ":"dfbg","status: ":"ADMITTEDONTAX","gradeExam: ":11,"firstName: ":"dfv","gradeHighschool: ":11,"average: ":5.5}
+{"lastName: ":"dfbg","status: ":"ADMITTEDONTAX","gradeExam: ":11,"firstName: ":"dfv","gradeHighschool: ":11,"average: ":5.5}
+{"lastName: ":"4trfe","status: ":"ADMITTED","gradeExam: ":11,"firstName: ":"34rt","gradeHighschool: ":11,"average: ":7}
+{"lastName: ":"dcvf","status: ":"REJECTED","gradeExam: ":11,"firstName: ":"sfc","gradeHighschool: ":11,"average: ":0}
+{"lastName: ":"dfv","status: ":"REJECTED","gradeExam: ":11,"firstName: ":"sdf","gradeHighschool: ":11,"average: ":0}
+{"lastName: ":"dfv","status: ":"ADMITTED","gradeExam: ":10,"firstName: ":"sdf","gradeHighschool: ":10,"average: ":9}
