@@ -49,6 +49,12 @@ public class StudentAdmissionServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
+		
+		assert request.getParameterMap().containsKey("firstName");
+		assert request.getParameterMap().containsKey("lastName");
+		assert request.getParameterMap().containsKey("gradeHighschool");
+		assert request.getParameterMap().containsKey("gradeExam");
+		
 		String firstName = request.getParameter("firstName");
 	    String lastName = request.getParameter("lastName");
 	    Float gradeHighschool = Float.valueOf(request.getParameter("gradeHighschool"));
@@ -56,13 +62,18 @@ public class StudentAdmissionServlet extends HttpServlet {
 	    Student newStudent = new Student(firstName, lastName, gradeHighschool, gradeExam);
 	    writeStudentToFile(newStudent);
 	    PrintWriter out = response.getWriter();
-	    out.println("<p>" + firstName + " " + lastName + " " + gradeHighschool + " " + gradeExam + "</p>");
+	    out.println("<p>" + firstName + " " + lastName + " " + gradeHighschool + " " + gradeExam + "</p>");	    
 	}
 
 	private void writeStudentToFile(Student s) {
 		JSONObject student = new JSONObject();
  
 		assert s.getFirstName() != null;
+		assert String.class.isInstance(s.getFirstName());
+		assert s.getLastName() != null;
+		assert String.class.isInstance(s.getLastName());
+		assert s.getAverage() != 0;
+		assert Float.class.isInstance(s.getFirstName());
 		
 		try {
 			student.put("firstName: ", s.getFirstName());
@@ -78,11 +89,17 @@ public class StudentAdmissionServlet extends HttpServlet {
 		
 		try(FileWriter fw = new FileWriter("/Users/crist/eclipse-workspace/StudentAdmission/students.txt", true);
 	    BufferedWriter bw = new BufferedWriter(fw);
-	    PrintWriter out = new PrintWriter(bw))
+			
+		//assert fw != null;
+				
+		PrintWriter out = new PrintWriter(bw))
 		{
 	    	out.println(student.toString());
-		} catch (IOException e) {
+		} 
+		catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+		
 	}
 }

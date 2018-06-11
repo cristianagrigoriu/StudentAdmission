@@ -1,0 +1,16 @@
+1. Project Description
+	The application manages the student application process to a university.
+	The user can see, insert and find students. He can also get the results of the admission - whether the candidate is admitted or not.
+	The user has to input the first and last name of the candidate, which represent the primary key in the database and the average grade from highschool and the grade from the admission exam. The grades can take values between (0, 10]. The system computed their average.
+	If the average >= 9,5 and average <= 10 => the student is ADMITTEDONSCHOLARSHIP.
+	If the average > 9,5  and average >= 7 => the student is ADMITTED.
+	If the average > 7 and average >= 5,5 => the student is ADMITTEDONBUDGET.
+	If the average > 5,5 and average >0 => the student is REJECTED.
+	The status values are stored in an enum structure.
+	For any other input values - such as negative grades or grades higher than 10, the status is not computed, as the average will be 0 - incorrect value.
+	The Student data, together with the computed average and admission results is written in JSON form into a file, from where it can be read later.
+2. Unit Testing
+	With Unit Testing, we have tested the StudentAdmissionStatus and the Student classes, meaning the classes that receive and compute the average and the admission status.
+	We tested the correct values of the average, with different input data, both correct and incorrect, and the values of the status.
+3. Assertions
+	We used assertions in the Servlet class, that writes and reads from the "database" file. We checked that the data we write to the file is valid.
