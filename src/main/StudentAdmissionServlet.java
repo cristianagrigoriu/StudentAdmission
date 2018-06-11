@@ -1,9 +1,12 @@
 package main;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.servlet.ServletException;
@@ -37,10 +40,36 @@ public class StudentAdmissionServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		FileReader in = new FileReader("/Users/crist/eclipse-workspace/StudentAdmission/students.txt");
+	    BufferedReader br = new BufferedReader(in);
+		JSONArray students = new JSONArray();
+	    
+		String line;
+		while ((line = br.readLine()) != null) {
+		    System.out.println(line);
+		    JSONObject obj;
+			try {
+				obj = new JSONObject(line);
+				//String firstName = obj.getString("firstName");
+				//String firstName = obj.getJSONObject("firstName").getString(key);
+				String lastName = obj.getString("lastName");
+				Float average = BigDecimal.valueOf(obj.getDouble("average")).floatValue();
+				AdmissionStatus status = AdmissionStatus.valueOf(obj.getString("status"));
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
+		}
+		
+		br.close();
+		
+		//request.setAttribute("products", products); // Will be available as ${products} in JSP
+        //request.getRequestDispatcher("/WEB-INF/products.jsp").forward(request, response);
+		
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		PrintWriter out = response.getWriter();
-		Date date = new Date();
-		out.println("<h2>Hi There!</h2><br/><h3>Date="+date +"</h3>");
+		//PrintWriter out = response.getWriter();
+		//Date date = new Date();
+		//out.println("<h2>Hi There!</h2><br/><h3>Date="+date +"</h3>");
 	}
 
 	/**

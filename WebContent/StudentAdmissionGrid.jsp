@@ -31,13 +31,15 @@
     <input type="submit" value="Delete Student" id="deleteStudent"/>
   </form>
   
-  <form action="http://google.com">
-    <input type="submit" value="Update Student" id="updateStudent"/>
+  <form action="StudentAdmissionServlet" method="get">
+    <input type="submit" value="Get Students" id="getStudents"/>
   </form>
   
   <!--<form action="http://google.com">
     <input type="submit" value="Filter Students" id="FilterStudents"/>
   </form>-->
+  
+  <div id="somediv"></div>
   
   <table style="width:100%">
   <tr>
@@ -104,8 +106,15 @@
 		   	 function hideOtherButtons () {
 		   		$("#addStudentFromFile").hide();
 	   	    	$("#deleteStudent").hide();
-	   	    	$("#updateStudent").hide();
+	   	    	$("#getStudents").hide();
 		   	    };
+		   	 
+		   	$(document).on("click", "#getStudents", function() { // When HTML DOM "click" event is invoked on element with ID "somebutton", execute the following function...
+                $.get("StudentAdmissionServlet", function(responseText) {   // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
+                    $("#somediv").text(responseText);           // Locate HTML DOM element with ID "somediv" and set its text content with the response text.
+                });
+            });
+		   	 
 	   		 });
 	</script>
 
